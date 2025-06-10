@@ -1,0 +1,29 @@
+base para comandos
+
+# commands
+
+//módulos
+const Discord = require("discord.js");
+
+module.exports = {
+  name: "nome do comando",
+  description: "descrição do comando",
+  run: async (client, interaction) => {
+    // o que o comando ira fazer ou ter...
+  },
+};
+
+
+# eventos 
+
+//módulos
+require("colors");
+
+module.exports = {
+    name: "nome do evento",
+    run: (client) => {
+       // o que o evento vai ter
+    }
+}
+
+
