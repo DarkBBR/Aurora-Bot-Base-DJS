@@ -36,7 +36,3 @@ coverage/
 # Arquivos temporários
 tmp/
 temp/
-
-# Arquivos de segurança
-src/security/config.js
-src/security/*.js 
