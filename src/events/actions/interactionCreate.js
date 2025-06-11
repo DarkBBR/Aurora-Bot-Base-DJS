@@ -1,5 +1,6 @@
 //módulos
 require("colors");
+const Discord = require("discord.js");
 
 module.exports = {
   name: "interactionCreate",

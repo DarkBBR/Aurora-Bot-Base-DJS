@@ -20,6 +20,6 @@ module.exports = {
       })
       .setTimestamp()
       .setThumbnail(interaction.user.displayAvatarURL({ dynamic: true }));
-    await interaction.reply({ embeds: [embed] });
+    await interaction.reply({ embeds: [embed], flags: Discord.MessageFlags.Ephemeral });
   },
 };

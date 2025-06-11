@@ -3,6 +3,7 @@ const Discord = require("discord.js");
 
 // pastas
 const config = require("./security/config");
+const setupCrashs = require("./security/crashs");
 const commandsHandler = require("./handler/commandsHandler");
 const eventsHandler = require("./handler/eventsHandler");
 
@@ -14,17 +15,8 @@ const client = new Discord.Client({
 
 module.exports = client;
 
-// proteção contra crash's
-process.on("unhandledRejection", (reason, p) => {
-  console.log(" [antiCrash] :: Unhandled Rejection/Catch");
-  console.log(reason, p);
-});
-process.on("uncaughtException", (err, origin) => {
-  console.error("[ Event Error: uncaughtException ]", err, origin);
-});
-process.on("uncaughtExceptionMonitor", (err, origin) => {
-  console.error("[ Event Error: uncaughtExceptionMonitor ]", err, origin);
-});
+// Inicializa o sistema de tratamento de erros
+setupCrashs(client);
 
 async function start() {
   try {
